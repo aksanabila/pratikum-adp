@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    float jari_jari, volume, luas_permukaan;
+
+    cout << "\n Tugas Modul 1 NO. 1 Shift 4 \n";
+    cout << "\n Nama : Aksa Nabila \n";
+    cout << "\n NIM : 2310432007 \n";
+
+    cout << "\n Program Menghitung Volume Bola dan Luas Permukaan Bola \n";
+
+    cout << "\n Masukkan Jari-jari Bola = ";
+    cin >> jari_jari;
+
+    volume = 4 / 3 * 3.14 * jari_jari * jari_jari * jari_jari;
+    luas_permukaan = 4 * 3.14 * jari_jari * jari_jari;
+
+    cout << " Volume Bola tersebut adalah = "<< volume << endl;
+    cout << " Luas Permukaan Bola tersebut adalah = " <<  luas_permukaan << endl;
+
+    return 0;
+}
