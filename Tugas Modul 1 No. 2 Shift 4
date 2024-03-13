@@ -1,0 +1,35 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int x1, x2, x3, x4, x5;
+    float rata2, ragam, simpangan_baku;
+    
+    cout << "\n Tugas Modul 1 NO. 2 Shift 4 \n";
+    cout << "\n Nama : Aksa Nabila \n";
+    cout << "\n NIM : 2310432007 \n";
+    
+    cout << "\n Program Menghitung Rata-rata, Ragam dan Simpangan Baku \n";
+    
+    cout << "Masukkan Nilai X1 = ";
+    cin >> x1;
+    cout << "Masukkan Nilai X2 = ";
+    cin >> x2;
+    cout << "Masukkan Nilai X3 = ";
+    cin >> x3;
+    cout << "Masukkan Nilai X4 = ";
+    cin >> x4;
+    cout << "Masukkan Nilai X5 = ";
+    cin >> x5;
+    
+    rata2=(x1+x2+x3+x4+x5)/5;
+    ragam = (((x1-rata2)*(x1-rata2))+((x2-rata2)*(x2-rata2))+((x3-rata2)*(x3-rata2))+((x4-rata2)*(x4-rata2))+((x5-rata2)*(x5-rata2)))/5;
+    simpangan_baku = sqrt(ragam);
+    
+    cout << "\n Rata-rata Data tersebut adalah ="<<rata2<<endl;
+    cout << "Ragam Data tersebut adalah ="<<ragam<<endl;
+    cout << "Simpangan Baku Data tersebut adalah ="<<simpangan_baku<<endl;
+  
+    return 0;
+}
