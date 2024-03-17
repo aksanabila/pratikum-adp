@@ -1,0 +1,134 @@
+#include <iostream>
+using namespace std;
+
+char nama[100][100], jenis_kelamin[100][100], kelas;
+int umur[100], ppn, harga_tiket, kode_kota, jumlah_bayar, jumlah_tiket, jumlah;
+
+int main ()
+{
+    cout<<"\n Tugas Modul 2 Shift 4 \n";
+    cout<<"\n Nama : Aksa Nabila \n";
+    cout<<"\n NIM : 2310432007 \n";
+
+    cout<<"\n===================================================================\n";
+    cout<<"\t\t\t Jumlah Penumpang =";
+    cin>>jumlah_tiket;
+    cout<<endl;
+    for (int i=1; i <= jumlah_tiket; i++)
+    {
+        cout << "Data Penumpang Ke-"<<i<<endl;
+        cout << "Nama :";
+        cin >> nama[i];
+        cout << "Umur :";
+        cin >> umur[i];
+        cout << "Jenis Kelamin :";
+        cin >> jenis_kelamin[i];
+        cout << endl;
+
+    }
+    cout<<"\n===================================================================\n";
+
+    cout<<"\n--------------------------- AKSA TRAVEL ---------------------------\n";
+    cout<<"\n----------------------- HARGA TIKET PESAWAT -----------------------\n";
+    cout<<"\n--------------------------- DARI PADANG ---------------------------\n";
+    cout<<"\n===================================================================\n";
+    cout<<"\n Tujuan Anda          Ekonomi        Bisnis         First          \n";
+    cout<<"\n                      Class(E)       Class(B)       Class(F)       \n";
+    cout<<"\n===================================================================\n";
+    cout<<"\n 1. Bangka            Rp 1.500.000   Rp 5.000.000   Rp 11.000.000  \n";
+    cout<<"\n 2. Aceh              Rp 2.250.000   Rp 5.985.000   Rp 10.000.000  \n";
+    cout<<"\n 3. Jakarta           Rp 3.500.000   Rp 7.000.000   Rp 16.050.000  \n";
+    cout<<"\n===================================================================\n";
+
+    cout<<"\n------------------------ Pilih Kota Tujuan ------------------------\n";
+    cout<<"\n Masukkan Kode Kota Tujuan[1-5] = ";
+    cin>>kode_kota;
+
+    switch (kode_kota)
+    {
+    case '1':
+    {
+       cout<<"Kota Tujuan Anda : Bangka\n"<<endl;
+       cout<<"\n---------------------- Pilih Kelas Pesawat ----------------------\n";
+       cout<<"\n Masukkan Kode Kelas Pesawat [E/B/F] :";
+       cin>>kelas;
+       cout<<"\n Jumlah Tiket Yang Akan Dibeli :";
+       cin>>jumlah_tiket;
+
+       if (kelas == 'E' || kelas == 'e')
+       {
+           jumlah_bayar = harga_tiket;
+       }
+       else if (kelas == 'B' || kelas == 'b')
+       {
+           jumlah_bayar = harga_tiket;
+       }
+        else if (kelas == 'F' || kelas == 'f')
+       {
+           jumlah_bayar = harga_tiket;
+       }
+       else
+       {
+           cout<<"Pilihan Tidak Tersedia"<<endl;
+       }
+       break;
+    }
+    case '2':
+    {
+       cout<<"Kota Tujuan Anda : Aceh\n"<<endl;
+       cout<<"\n---------------------- Pilih Kelas Pesawat ----------------------\n";
+       cout<<"\n Masukkan Kode Kelas Pesawat [E/B/F] :";
+       cin>>kelas;
+       cout<<"\n Jumlah Tiket Yang Akan Dibeli :";
+       cin>>jumlah_tiket;
+
+       if (kelas == 'E' || kelas == 'e')
+       {
+           jumlah_bayar = harga_tiket;
+       }
+       else if (kelas == 'B' || kelas == 'b')
+       {
+           jumlah_bayar = harga_tiket;
+       }
+        else if (kelas == 'F' || kelas == 'f')
+       {
+           jumlah_bayar = harga_tiket;
+       }
+       else
+       {
+           cout<<"Pilihan Tidak Tersedia"<<endl;
+       }
+       break;
+    }
+    case '3':
+    {
+       cout<<"Kota Tujuan Anda ; Jakarta\n"<<endl;
+       cout<<"\n---------------------- Pilih Kelas Pesawat ----------------------\n";
+       cout<<"\n Masukkan Kode Kelas Pesawat [E/B/F] :";
+       cin>>kelas;
+       cout<<"\n Jumlah Tiket Yang Akan Dibeli :";
+       cin>>jumlah_tiket;
+
+       if (kelas == 'E' || kelas == 'e')
+       {
+           jumlah_bayar = harga_tiket;
+       }
+       else if (kelas == 'B' || kelas == 'b')
+       {
+           jumlah_bayar = harga_tiket;
+       }
+        else if (kelas == 'F' || kelas == 'f')
+       {
+           jumlah_bayar = harga_tiket;
+       }
+       else
+       {
+           cout<<"Pilihan Tidak Tersedia"<<endl;
+       }
+       break;
+    }
+    default :
+        cout<<"Anda Salah Memasukkan Kode Kelas"<<endl;
+    }
+return 0;
+}
