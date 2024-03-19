@@ -1,0 +1,88 @@
+print("Tugas Modul 2 shift 4")
+print("Nama = Aksa Nabila")
+print("NIM = 2310432007")
+#Tampilan 1
+print("===================================================================")
+print("                           Data Penumpang")
+nama = input("Masukkan Nama Anda : ")
+umur = int(input("Masukkan umur: "))
+jenis_kelamin = input("Masukkan jenis kelamin : ")
+
+#Tampilan 2 dan 3
+print("===================================================================")
+print("--------------------------- AKSA TRAVEL ---------------------------")
+print("----------------------- HARGA TIKET PESAWAT -----------------------")
+print("--------------------------- DARI PADANG ---------------------------")
+print("===================================================================")
+print(" Tujuan Anda          Ekonomi        Bisnis         First          ")
+print("                      Class(001)     Class(002)     Class(003)     ")
+print("===================================================================")
+print(" 1. Bangka            Rp 1.500.000   Rp 2.500.000   Rp 4.000.000  ")
+print(" 2. Aceh              Rp 2.000.000   Rp 3.000.000   Rp 4.500.000  ")
+print(" 3. Medan             Rp 2.500.000   Rp 3.500.000   Rp 5.000.000  ")
+print(" 4. Jakarta           Rp 3.500.000   Rp 4.500.000   Rp 6.000.000  ")
+print(" 5. Bandung           Rp 4.000.000   Rp 5.000.000   Rp 6.500.000  ")
+print("===================================================================")
+
+print("--------- Pilih Kota Tujuan Dan Maskapai Penerbangan Anda ---------")
+print("Pilih salah satu (masukkan angka 1-5):")
+tujuan = int(input())
+if tujuan == 1:
+    ntujuan = "Bangka"
+    harga1 = 1000000
+elif tujuan == 2:
+    ntujuan = "Aceh"
+    harga1 = 1500000
+elif tujuan == 3:
+    ntujuan = "Medan"
+    harga1 = 2000000
+elif tujuan == 4:
+    ntujuan = "Jakarta"
+    harga1 = 3000000
+elif tujuan == 5:
+    ntujuan = "Bandung"
+    harga1 = 3500000
+else:
+    print("Error: Pilihan tujuan tidak valid")
+    exit(1)
+
+# Jenis maskapai
+print("Pilih salah satu (masukkan angka 001-003):")
+maskapai = int(input())
+if maskapai == 1:
+    nmaskapai = "Ekonomi Class"
+    harga2 = 500000
+elif maskapai == 2:
+    nmaskapai = "Bisnis Class"
+    harga2 = 1500000
+elif maskapai == 3:
+    nmaskapai = "First Class"
+    harga2 = 3000000
+else:
+    print("Error: Pilihan maskapai tidak valid")
+    exit(1)
+
+# Masukkan jumlah kursi
+kursi = int(input("Masukkan jumlah kursi: "))
+if kursi <= 0:
+    print("Error: Jumlah kursi tidak valid")
+    exit(1)
+
+total = kursi * (harga1 + harga2)
+
+if 1 <= kursi <= 3:
+    pass
+elif kursi > 3:
+    total *= 0.75
+
+#Tampila 4
+print("===================================================================")
+print("               Data Penumpang dan Struk Pemesanan")
+print("Nama          :", nama)
+print("Umur          :", umur)
+print("Jenis Kelamin :", jenis_kelamin)
+print("-------------------------------------------")
+print("Kota Tujuan   :", ntujuan)
+print("Jenis Maskapai:", nmaskapai)
+print("Jumlah Tiket  :", kursi)
+print("Total Harga   : Rp", total)
