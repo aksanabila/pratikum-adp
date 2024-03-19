@@ -1,0 +1,101 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+char nama[100][100], jenis_kelamin[100][100],tujuan, harga, biaya, kota_tujuan, jenis_maskapai, Bangka, Aceh, Medan, Jakarta, Bandung, Ekonomi, Bisnis, FirstClass;
+int umur[100], kelas, kode_kota, harga_tiket, biaya_tambahan, jumlah_bayar, jumlah_tiket, diskon, jumlah, total, harga_diskon;
+
+int main (){
+    cout<<"\n Tugas Modul 2 Shift 4 \n";
+    cout<<"\n Nama : Aksa Nabila \n";
+    cout<<"\n NIM : 2310432007 \n";
+
+    //tampilan 1
+    cout<<"\n===================================================================\n";
+    cout<<"\t\t\t Jumlah Penumpang = ";
+    cin>>jumlah_tiket;
+    cout<<endl;
+    for (int i=1; i <= jumlah_tiket; i++)
+    {
+        cout << "Data Penumpang Ke-"<<i<<endl;
+        cout << "Nama : ";
+        cin >> nama[i];
+        cout << "Umur : ";
+        cin >> umur[i];
+        cout << "Jenis Kelamin : ";
+        cin >> jenis_kelamin[i];
+        cout << endl;
+
+    }
+
+    //tampilan 2 dan 3
+    cout<<"\n===================================================================\n";
+
+    cout<<"\n--------------------------- AKSA TRAVEL ---------------------------\n";
+    cout<<"\n----------------------- HARGA TIKET PESAWAT -----------------------\n";
+    cout<<"\n--------------------------- DARI PADANG ---------------------------\n";
+    cout<<"\n===================================================================\n";
+    cout<<"\n Tujuan Anda          Ekonomi        Bisnis         First          \n";
+    cout<<"\n                      Class(001)     Class(002)     Class(003)     \n";
+    cout<<"\n===================================================================\n";
+    cout<<"\n 1. Bangka            Rp 1.500.000   Rp 2.500.000   Rp 4.000.000  \n";
+    cout<<"\n 2. Aceh              Rp 2.000.000   Rp 3.000.000   Rp 4.500.000  \n";
+    cout<<"\n 3. Medan             Rp 2.500.000   Rp 3.500.000   Rp 5.000.000  \n";
+    cout<<"\n 4. Jakarta           Rp 3.500.000   Rp 4.500.000   Rp 6.000.000  \n";
+    cout<<"\n 5. Bandung           Rp 4.000.000   Rp 5.000.000   Rp 6.500.000  \n";
+    cout<<"\n===================================================================\n";
+
+    cout<<"\n------------------------ Pilih Kota Tujuan ------------------------\n";
+    cout<<"\nMasukkan Kode Kota Tujuan Anda[1-5] = ";cin>>kode_kota;
+
+    if (kode_kota == 1 ){ harga_tiket = 1000000;
+    } else {if (kode_kota == 2 ){ harga_tiket = 1500000;}
+            else {if (kode_kota = 3 ){ harga_tiket = 2000000;}
+                else {if (kode_kota = 4){ harga_tiket = 3000000;}
+                    else {if (kode_kota = 5){ harga_tiket = 3500000;}}}}}
+
+    cout<< "\nMasukkan Kode Maskapai Penerbangan Anda[001-003] = ";cin>>kelas;
+
+    if (kelas == 001){ biaya_tambahan = 500000;
+    } else {if (kelas == 002){ biaya_tambahan = 1500000;}
+            else {if (kelas == 003){ biaya_tambahan = 3000000;}}}
+
+    cout<<"\nHarga Tiket Anda = Rp "<<harga_tiket<<" dengan Biaya Tambahan = Rp "<<biaya_tambahan<<endl;
+
+    //tampilan 4
+    cout<<"\n===================================================================\n";
+    cout<<"               Data Penumpang dan Struk Pemesanan";
+    cout<<endl;
+    cout<<endl;
+    for(int a = 1; a <= jumlah_tiket; a++)
+    {
+        cout<<"Nama Pemesan ke-"<<a<<" : "<<nama[a]<<"\nUmur : "<<umur[a]<<" Tahun"<<"\nJenis Kelamin : "<<jenis_kelamin[a]<<endl;
+    }
+    cout<<"\n...................................\n";
+    cout<<"Kota Tujuan   : "<<kode_kota<<endl;
+
+    if (kode_kota == 1 ){ cout<<"                Bangka";
+    } else {if (kode_kota == 2 ){cout<<"                Aceh";}
+            else {if (kode_kota == 3 ){cout<<"                Medan";}
+                else {if (kode_kota == 4 ){cout<<"                Jakarta";}
+                    else {if (kode_kota == 5 ){cout<<"                Bandung";}}}}}
+
+    cout<<"\nJenis Makapai : "<<kelas<<endl;
+
+    if (kelas == 001){ cout<<"                Ekonomi";
+    } else {if (kelas == 002){ cout<<"                Bisnis";}
+            else {if (kelas == 003){ cout<<"                FirstClass";}}}
+
+    cout<<"\nJumlah Tiket  : "<<jumlah_tiket<<endl;
+    total = (harga_tiket+biaya_tambahan)*jumlah_tiket;
+    if (jumlah_tiket >= 3){
+        diskon = total*0.25;
+    }else {
+        diskon = 0;
+        }
+    jumlah_bayar = total-diskon;
+    cout<<"Jumlah Bayar  : Rp "<<jumlah_bayar<<endl;
+    cout<<"\n===================================================================\n";
+
+    return 0;
+}
