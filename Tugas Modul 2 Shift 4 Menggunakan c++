@@ -2,8 +2,8 @@
 #include <conio.h>
 using namespace std;
 
-char nama[100][100], jenis_kelamin[100][100],tujuan, harga, biaya, kota_tujuan, jenis_maskapai, Bangka, Aceh, Medan, Jakarta, Bandung, Ekonomi, Bisnis, FirstClass;
-int umur[100], kelas, kode_kota, harga_tiket, biaya_tambahan, jumlah_bayar, jumlah_tiket, diskon, jumlah, total, harga_diskon;
+string nama, jenis_kelamin,tujuan, harga, biaya, kota_tujuan, jenis_maskapai, Bangka, Aceh, Medan, Jakarta, Bandung, Ekonomi, Bisnis, FirstClass;
+int umur, kelas, kode_kota, harga_tiket, biaya_tambahan, jumlah_bayar, jumlah_tiket, diskon, jumlah, total, harga_diskon;
 
 int main (){
     cout<<"\n Tugas Modul 2 Shift 4 \n";
@@ -12,21 +12,17 @@ int main (){
 
     //tampilan 1
     cout<<"\n===================================================================\n";
-    cout<<"\t\t\t Jumlah Penumpang = ";
-    cin>>jumlah_tiket;
+    cout<<"\t\t\t Data Pembeli";
     cout<<endl;
-    for (int i=1; i <= jumlah_tiket; i++)
-    {
-        cout << "Data Penumpang Ke-"<<i<<endl;
-        cout << "Nama : ";
-        cin >> nama[i];
-        cout << "Umur : ";
-        cin >> umur[i];
-        cout << "Jenis Kelamin : ";
-        cin >> jenis_kelamin[i];
-        cout << endl;
-
-    }
+    cout << "Nama : ";
+    cin>>nama;
+    cout << "\nUmur : ";
+    cin>>umur;
+    cout << "\nJenis Kelamin : ";
+    cin >> jenis_kelamin;
+    cout<<"\nJumlah Tiket Yang di Beli : ";
+    cin>>jumlah_tiket;
+    cout << endl;
 
     //tampilan 2 dan 3
     cout<<"\n===================================================================\n";
@@ -45,7 +41,7 @@ int main (){
     cout<<"\n 5. Bandung           Rp 4.000.000   Rp 5.000.000   Rp 6.500.000  \n";
     cout<<"\n===================================================================\n";
 
-    cout<<"\n------------------------ Pilih Kota Tujuan ------------------------\n";
+    cout<<"\n--------- Pilih Kota Tujuan dan Maskapai Penerbangan Anda ---------\n";
     cout<<"\nMasukkan Kode Kota Tujuan Anda[1-5] = ";cin>>kode_kota;
 
     if (kode_kota == 1 ){ harga_tiket = 1000000;
@@ -67,10 +63,9 @@ int main (){
     cout<<"               Data Penumpang dan Struk Pemesanan";
     cout<<endl;
     cout<<endl;
-    for(int a = 1; a <= jumlah_tiket; a++)
-    {
-        cout<<"Nama Pemesan ke-"<<a<<" : "<<nama[a]<<"\nUmur : "<<umur[a]<<" Tahun"<<"\nJenis Kelamin : "<<jenis_kelamin[a]<<endl;
-    }
+    cout<<"Nama Pemesan = "<<nama<<endl;
+    cout<<"Umur = "<<umur<<" Tahun"<<endl;
+    cout<<"Jenis Kelamin = "<<jenis_kelamin<<endl;
     cout<<"\n...................................\n";
     cout<<"Kota Tujuan   : "<<kode_kota<<endl;
 
