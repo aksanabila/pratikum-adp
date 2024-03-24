@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int nomor, i, j, k;
+    char huruf='A';
+    int n=1;
+    cout<<"\n\t\tMembuat Pola Seperti Piramida Menggunakan Alphabet\n";
+    cout<<"\n=======================================================================================\n";
+    cout<<"\t\t   Masukkan Jumlah Huruf pada Piramida [<26] = ";
+    cin>>nomor;
+    cout<<endl;
+
+    for(int i=1; i<=nomor; i++)
+    {
+        for(j=1; j<=nomor-i; j++)
+        cout<<"  ";
+        for(k=0; k<=(n/2); k++)
+        {
+            cout<<huruf++<< " ";
+        }
+        huruf=huruf-2;
+        for(k=0; k<i-1; k++)
+        {
+            cout<<huruf--<< " ";
+        }
+        n+=2;
+        huruf='A';
+        cout<<endl;
+    }
+}
