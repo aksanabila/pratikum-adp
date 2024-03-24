@@ -6,7 +6,7 @@ int main(){
     cout<<"\n Nama : Aksa Nabila \n";
     cout<<"\n NIM : 2310432007 \n";
 
-    int nomor, i, j, k;
+    int nomor, i, j, n;
     char huruf='A';
     int n=1;
     cout<<"\n\t\tMembuat Pola Seperti Piramida Menggunakan Alphabet\n";
