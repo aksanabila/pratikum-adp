@@ -2,6 +2,10 @@
 using namespace std;
 
 int main(){
+    cout<<"\n Tugas Modul 3 Shift 4 \n";
+    cout<<"\n Nama : Aksa Nabila \n";
+    cout<<"\n NIM : 2310432007 \n";
+
     int nomor, i, j, k;
     char huruf='A';
     int n=1;
@@ -15,12 +19,12 @@ int main(){
     {
         for(j=1; j<=nomor-i; j++)
         cout<<"  ";
-        for(k=0; k<=(n/2); k++)
+        for(j=0; j<=(n/2); j++)
         {
             cout<<huruf++<< " ";
         }
         huruf=huruf-2;
-        for(k=0; k<i-1; k++)
+        for(j=0; j<i-1; j++)
         {
             cout<<huruf--<< " ";
         }
