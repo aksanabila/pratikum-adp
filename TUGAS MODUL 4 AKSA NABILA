@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    cout<<"\n Tugas Modul 4 Shift 4 \n";
+    cout<<"\n Nama : Aksa Nabila \n";
+    cout<<"\n NIM : 2310432007 \n";
+    cout<<endl;
+    cout<<"\n=======================================================================================\n";
+    int dor=0;
+    for(int i=1; i<=100; i++)
+        {
+             if (i % 10 == 0){
+                cout<<"DOR"<<endl;
+                dor++;
+            }else if (i % 3 == 0){
+                cout<<"DOR    ";
+                dor++;
+            }else if (i % 5 == 0){
+                cout<<"DOR   ";
+                dor++;
+            }else{
+                cout<<i<<"    ";
+            }
+        }
+        cout<<"\n\nTotal DOR yang muncul sebanyak = "<<dor<<" buah"<<endl;
+
+}
