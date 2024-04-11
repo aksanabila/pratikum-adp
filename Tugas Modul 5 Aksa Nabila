@@ -1,0 +1,63 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <sstream>
+using namespace std;
+
+vector<int>inputArray(){
+    string baris;
+    vector<int> array;
+    while(true){
+        getline(cin, baris);
+        array.clear();
+        stringstream ss(baris);
+        char c;
+        int angka;
+        bool benar = true;
+        while(ss >> angka) {
+            if(angka < 0 || angka > 9){
+                cout<<"Masukkan angka antara 0 sampai 9."<<endl;
+                benar = false;
+                break;
+            }
+            array.push_back(angka);
+            ss >> c;
+        }
+        if(benar)break;
+    }
+    sort(array.begin(), array.end());
+    array.erase(unique(array.begin(), array.end()), array.end());
+    return array;
+}
+
+void printArray(const vector<int>&array){
+    for(int angka : array) {
+        cout<<angka<<" ";
+    }
+    cout<<endl;
+}
+
+int main() {
+    cout<<"\n Tugas Modul 5 Shift 4 \n";
+    cout<<"\n Nama : Aksa Nabila \n";
+    cout<<"\n NIM : 2310432007 \n";
+    cout<<endl;
+
+    cout<<"Masukkan angka untuk array A (0-9 dan dipisahkan dengan koma): ";
+    vector<int> A = inputArray();
+    cout<<"Masukkan angka untuk array B (0-9 dan dipisahkan dengan koma): ";
+    vector<int> B = inputArray();
+
+    vector<int> hanya_A, hanya_B, keduanya;
+    set_difference(A.begin(), A.end(), B.begin(), B.end(), back_inserter(hanya_A));
+    set_difference(B.begin(), B.end(), A.begin(), A.end(), back_inserter(hanya_B));
+    set_intersection(A.begin(), A.end(), B.begin(), B.end(), back_inserter(keduanya));
+    cout<<"-------------------------------------------------------------------------\n";
+    cout<<"Element yang hanya ada di A: ";
+    printArray(hanya_A);
+    cout<<"Element yang hanya ada di B: ";
+    printArray(hanya_B);
+    cout<<"Element yang ada di A dan B: ";
+    printArray(keduanya);
+
+}
