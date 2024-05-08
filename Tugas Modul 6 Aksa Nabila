@@ -1,0 +1,43 @@
+
+print("Tugas Modul 6 shift 4 ARRAY")
+print("Nama : Aksa Nabila")
+print("NIM : 2310432007")
+print("------------------------------------------------------------")
+n = int(input("Masukkan jumlah barang = "))
+barang = []
+for i in range(n):
+    nama = str(input(f"Nama barang ke-{i+1} = "))
+    harga = int(input(f"Harga {nama} = "))
+    stok = int(input(f"Stok barang {nama} = "))
+    barang.append([nama, harga, stok])
+print("============================================================")
+print("---------------- DATA HARGA DAN STOK BARANG ----------------")
+print("============================================================")
+print("\tBARANG\t\t|\tHARGA\t|\tSTOK")
+print("============================================================")
+for i in range(len(barang)):
+    print(f"\t{barang[i][0]}\t\t|\t{barang[i][1]}\t|\t{barang[i][2]}")
+print("============================================================")
+
+barang_terbesar = ""
+keuntungan_terbesar = 0
+barang_terkecil = ""
+keuntungan_terkecil = float('inf')
+total_keuntungan = 0
+
+for item in barang:
+    nama = item[0]
+    harga = item[1]
+    stok = item[2]
+    keuntungan = harga*stok
+    total_keuntungan += keuntungan
+    if keuntungan > keuntungan_terbesar:
+        keuntungan_terbesar = keuntungan
+        barang_terbesar = nama
+    if keuntungan < keuntungan_terkecil:
+        keuntungan_terkecil = keuntungan
+        barang_terkecil = nama
+
+print(f"1. Barang dengan keuntungan terbesar yaitu = {barang_terbesar}")
+print(f"2. Barang dengan keuntungan terkecil yaitu = {barang_terkecil}")
+print(f"3. Total keuntungan yang diperoleh yaitu = {total_keuntungan}")
