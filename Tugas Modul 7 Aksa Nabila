@@ -1,0 +1,30 @@
+print("Tugas Modul 7 shift 4")
+print("Nama : Aksa Nabila")
+print("NIM : 2310432007")
+print("----------------------------------------------------------------------------------------------------")
+
+def menghitung_kecepatan_akhir(kecepatan_awal, percepatan, waktu):
+    kecepatan_akhir = kecepatan_awal + (percepatan * waktu)
+    return kecepatan_akhir
+
+def menghitung_jarak(kecepatan_awal, percepatan, waktu):
+    jarak = (kecepatan_awal * waktu) + ((1 / 2) * percepatan * waktu * waktu)
+    return jarak
+n = int(input("Masukkan banyak data = "))
+data = []
+for i in range(n):
+    kecepatan_awal = int(input(f"Masukkan kecepatan awal ke-{i+1} = "))
+    percepatan = int(input(f"Masukkan percepatan ke-{i+1} = "))
+    waktu = int(input(f"Masukkan waktu ke-{i+1} = "))
+    kecepatan_akhir = menghitung_kecepatan_akhir(kecepatan_awal, percepatan, waktu)
+    jarak = menghitung_jarak(kecepatan_awal, percepatan, waktu)
+    data.append([kecepatan_awal, percepatan, waktu, kecepatan_akhir, jarak])
+
+print("====================================================================================================")
+print("{:<5}|\t{:<15}|   {:<10}  |\t{:<10}|   {:<15}  |\t{:<10}".format("No.", "Kecepatan awal", "Percepatan", "Waktu", "Kecepatan akhir", "Jarak"))
+print("====================================================================================================")
+for i, entry in enumerate(data, 1):
+    print("{:<5}|\t{:<15}|   {:<10}  |\t{:<10}|   {:<15}  |\t{:<10}".format(i, *entry))
+    print("----------------------------------------------------------------------------------------------------")
+print("====================================================================================================")
+
