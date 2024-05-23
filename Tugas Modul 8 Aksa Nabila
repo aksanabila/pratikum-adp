@@ -1,0 +1,62 @@
+print("Tugas Modul 8 shift 4")
+print("Nama = Aksa Nabila")
+print("NIM = 2310432007")
+print("."*25)
+
+def simpan(data):
+    with open("datakeuangan.txt", "a") as file:
+        file.write(f"{data['tanggal']},{data['jumlah']},{data['tipe']},{data['keterangan']}\n")
+
+def tampilkan():
+    with open("datakeuangan.txt", "r") as file:
+        print("="*80)
+        print("{:^80}".format("DATA KEUANGAN ANDA"))
+        print("="*80)
+        print("{:<15} {:<15} {:<15} {:<30}".format("TANGGAL", "JUMLAH", "TIPE", "KETERANGAN"))
+        print("-" * 80)
+        for line in file:
+            tanggal, jumlah, tipe, keterangan = line.strip().split(",")
+            print("{:<15} {:<15} {:<15} {:<30}".format(tanggal, jumlah, tipe, keterangan))
+        print("-"*80)
+
+def hapus():
+    index = int(input("Masukkan indeks data yang ingin anda hapus = "))
+    data_keuangan = []
+    with open("datakeuangan.txt", "r") as file:
+        for line in file:
+            data_keuangan.append(line.strip())
+    del data_keuangan[index]
+    with open("datakeuangan.txt", "w") as file:
+        for data in data_keuangan:
+            file.write(data+"\n")
+    print("--- DATA TELAH BERHASIL DIHAPUS!! ---")
+
+def main():
+    while True:
+        print("\n----- PILIH MENU YANG INGIN ANDA PROSES!! -----")
+        print("\t1. Tambah Data Keuangan")
+        print("\t2. Tampilkan Data Keuangan")
+        print("\t3. Hapus Data Keuangan")
+        print("\t4. Keluar")
+        pilihan = input("\tMasukkan pilihan Anda = ")
+        print("."*50)
+        if pilihan == "1":
+            tanggal = input("Masukkan tanggal (format: tgl/bln/thn) = ")
+            jumlah = input("Masukkan jumlah uang = ")
+            tipe = input("Masukkan tipe (pemasukkan/pengeluaran) = ").lower()
+            keterangan = input("Masukkan keterangan = ")
+            data = {"tanggal": tanggal, "jumlah": jumlah, "tipe": tipe, "keterangan": keterangan}
+            simpan(data)
+            print("--- Yeyy! DATA BERHASIL DITAMBAHKAN!! ---")
+        elif pilihan == "2":
+            tampilkan()
+        elif pilihan == "3":
+            hapus()
+        elif pilihan == "4":
+            print("TERIMA KASIH TELAH MENGGUNAKAN PROGRAM INI!!")
+            break
+        else:
+            print("--- PILIHAN TIDAK VALID! SILAHKAN PILIH LAGI!! ---")
+        print("."*50)
+
+main()
