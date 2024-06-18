@@ -1,0 +1,65 @@
+
+def simpan(data):
+    with open("datakeuangan.txt", "a") as file:
+        file.write(f"{data['tanggal']},{data['jumlah']},{data['tipe']},{data['keterangan']}\n")
+
+def tampilkan():
+    with open("datakeuangan.txt", "r") as file:
+        cprint("="*78, 'red', 'on_cyan')
+        cprint("{:^78}".format("DATA KEUANGAN ANDA"), 'red', 'on_cyan')
+        cprint("="*78, 'red', 'on_cyan')
+        cprint("{:<15} {:<15} {:<15} {:<30}".format("TANGGAL", "JUMLAH", "TIPE", "KETERANGAN"), 'red', 'on_cyan')
+        cprint("-"*78, 'red', 'on_cyan')
+        for line in file:
+            tanggal, jumlah, tipe, keterangan = line.strip().split(",")
+            cprint("{:<15} {:<15} {:<15} {:<30}".format(tanggal, jumlah, tipe, keterangan), 'black', 'on_white')
+        cprint("-"*78, 'red', 'on_cyan')
+
+def hapus():
+    index = int(input("Masukkan indeks data yang ingin anda hapus [dimulai dari 0] = "))
+    data_keuangan = []
+    with open("datakeuangan.txt", "r") as file:
+        for line in file:
+            data_keuangan.append(line.strip())
+    del data_keuangan[index]
+    with open("datakeuangan.txt", "w") as file:
+        for data in data_keuangan:
+            file.write(data+"\n")
+    cprint("--- DATA TELAH BERHASIL DIHAPUS!! ---")
+
+import os
+import time
+from termcolor import colored, cprint
+
+os.system('cls')
+
+while True:
+    cprint("{:^50}".format("SELAMAT DATANG DI CATATAN KEUANGAN !!"), 'red')
+    cprint("\n----- PILIH MENU YANG INGIN ANDA PROSES!! -----", 'blue')
+    cprint("\t1. Tambah Data Keuangan", 'blue')
+    cprint("\t2. Tampilkan Data Keuangan", 'blue')
+    cprint("\t3. Hapus Data Keuangan", 'blue')
+    cprint("\t4. Keluar", 'blue')
+    pilihan = input("\tMasukkan pilihan Anda = ")
+    print("."*50)
+    if pilihan == "1":
+        tanggal = input("Masukkan tanggal (format: tgl/bln/thn) = ")
+        jumlah = input("Masukkan jumlah uang = ")
+        tipe = input("Masukkan tipe (pemasukkan/pengeluaran) = ").lower()
+        keterangan = input("Masukkan keterangan = ")
+        data = {"tanggal": tanggal, "jumlah": jumlah, "tipe": tipe, "keterangan": keterangan}
+        simpan(data)
+        cprint("--- Yeyy! DATA BERHASIL DITAMBAHKAN!! ---", 'red')
+    elif pilihan == "2":
+        tampilkan()
+    elif pilihan == "3":
+        hapus()
+    elif pilihan == "4":
+        cprint("TERIMA KASIH TELAH MENGGUNAKAN PROGRAM INI!!", 'red')
+        break
+    else:
+        cprint("--- PILIHAN TIDAK VALID! SILAHKAN PILIH LAGI!! ---", 'red')
+
+    print("\n")
+    print("\n")
+    time.sleep(2)
