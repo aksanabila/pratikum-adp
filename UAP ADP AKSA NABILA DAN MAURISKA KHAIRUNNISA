@@ -45,7 +45,7 @@ while True:
     if pilihan == "1":
         tanggal = input("Masukkan tanggal (format: tgl/bln/thn) = ")
         jumlah = input("Masukkan jumlah uang = ")
-        tipe = input("Masukkan tipe (pemasukkan/pengeluaran) = ").lower()
+        tipe = input("Masukkan tipe (pemasukkan/pengeluaran) = ")
         keterangan = input("Masukkan keterangan = ")
         data = {"tanggal": tanggal, "jumlah": jumlah, "tipe": tipe, "keterangan": keterangan}
         simpan(data)
