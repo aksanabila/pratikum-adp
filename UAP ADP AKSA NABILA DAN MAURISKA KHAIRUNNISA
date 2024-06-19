@@ -1,5 +1,7 @@
 
 def simpan(data):
+    data_keuangan = []
+    data_keuangan.append([data['tanggal'], data['jumlah'], data['tipe'], data['keterangan']])
     with open("datakeuangan.txt", "a") as file:
         file.write(f"{data['tanggal']},{data['jumlah']},{data['tipe']},{data['keterangan']}\n")
 
